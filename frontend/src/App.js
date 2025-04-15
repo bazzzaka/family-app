@@ -142,9 +142,135 @@ const App = () => {
           rounded: {
             borderRadius: '16px',
           },
+          root: {
+            margin: 0,
+            padding: 0,
+            paddingLeft: '0 !important',
+            marginLeft: '0 !important',
+            '&.MuiContainer-maxWidthXl': {
+              paddingLeft: '0 !important',
+              marginLeft: '0 !important',
+            }
+          }
         },
       },
+      MuiBox: {
+        styleOverrides: {
+          root: {
+            margin: 0,
+            padding: 0,
+            paddingLeft: '0 !important',
+            marginLeft: '0 !important',
+            borderLeft: 'none !important',
+            '&.css-p43sob, &.css-14e3o55, &.css-1at9qkq': {
+              paddingLeft: '0 !important',
+              marginLeft: '0 !important',
+              borderLeft: 'none !important',
+              '& > *': {
+                paddingLeft: '0 !important',
+                marginLeft: '0 !important',
+                borderLeft: 'none !important',
+              }
+            }
+          }
+        }
+      },
+      MuiContainer: {
+        styleOverrides: {
+          root: {
+            paddingLeft: '0 !important',
+            marginLeft: '0 !important',
+            paddingRight: '16px !important',
+            marginRight: '0 !important',
+            maxWidth: '100% !important',
+            '&.css-hhdjsd-MuiContainer-root, &.MuiContainer-maxWidthXl': {
+              paddingLeft: '0 !important',
+              marginLeft: '0 !important',
+              '& > *': {
+                paddingLeft: '0 !important',
+                marginLeft: '0 !important',
+              }
+            }
+          }
+        }
+      },
+      MuiGrid: {
+        styleOverrides: {
+          root: {
+            paddingLeft: '0 !important',
+            marginLeft: '0 !important'
+          },
+          container: {
+            paddingLeft: '0 !important',
+            marginLeft: '0 !important'
+          }
+        }
+      },
+      MuiDrawer: {
+        styleOverrides: {
+          paper: {
+            '&.MuiDrawer-paperAnchorDockedLeft': {
+              borderRight: '1px solid rgba(0, 0, 0, 0.12)'
+            }
+          }
+        }
+      },
+      body: {
+        styleOverrides: {
+          root: {
+            margin: 0,
+            padding: 0,
+            '& *': {
+              boxSizing: 'border-box'
+            }
+          }
+        }
+      }
     },
+    // Global CSS overrides
+    cssBaseline: {
+      styleOverrides: {
+        'html, body': {
+          margin: 0,
+          padding: 0,
+          overflowX: 'hidden'
+        },
+        // Remove all left margins and padding for all elements
+        '*': {
+          boxSizing: 'border-box'
+        },
+        '.MuiBox-root': {
+          paddingLeft: '0 !important',
+          marginLeft: '0 !important'
+        },
+        '.MuiToolbar-root, .MuiToolbar-gutters, .MuiToolbar-regular, .css-1ygil4i-MuiToolbar-root': {
+          paddingLeft: '0 !important',
+          marginLeft: '0 !important',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between'
+        },
+        '.css-p43sob, .css-14e3o55, .css-1at9qkq, .css-1bohzk3, .css-hhdjsd-MuiContainer-root': {
+          paddingLeft: '0 !important',
+          marginLeft: '0 !important',
+          border: 'none !important',
+          '& > *': {
+            paddingLeft: '0 !important',
+            marginLeft: '0 !important'
+          }
+        },
+        '.MuiContainer-root': {
+          paddingLeft: '0 !important',
+          marginLeft: '0 !important',
+          width: '100% !important',
+          maxWidth: '100% !important'
+        },
+        '.MuiGrid-root, .MuiGrid-container, .MuiGrid-item': {
+          paddingLeft: '0 !important',
+          marginLeft: '0 !important'
+        }
+      }
+    }
   });
   
   // Auth check function
