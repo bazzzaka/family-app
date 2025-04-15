@@ -22,10 +22,12 @@
   },
   "dashboard": {
     "welcome": "Ласкаво просимо до Сімейного Додатку",
+    "welcomeNoApp": "Ласкаво просимо до Сімейний",
     "subtitle": "Цифровий дім вашої родини",
     "familyGroups": "Сімейні Групи",
+    "myFamily": "Моя Сім'я",
     "familyGroupsDescription": "Керуйте сімейними групами та учасниками",
-    "familyTree": "Родовід",
+    "familyTree": "Родове дерево",
     "familyTreeDescription": "Досліджуйте історію та зв'язки вашої родини",
     "chat": "Чат",
     "chatDescription": "Спілкуйтесь з членами вашої родини",

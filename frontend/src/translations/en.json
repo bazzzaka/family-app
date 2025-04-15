@@ -22,8 +22,10 @@
   },
   "dashboard": {
     "welcome": "Welcome to Family App",
+    "welcomeNoApp": "Welcome to Family",
     "subtitle": "Your family's digital home",
     "familyGroups": "Family Groups",
+    "myFamily": "My Family",
     "familyGroupsDescription": "Manage your family groups and members",
     "familyTree": "Family Tree",
     "familyTreeDescription": "Explore your family history and connections",
