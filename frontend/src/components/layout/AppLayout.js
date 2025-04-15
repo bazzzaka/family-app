@@ -167,7 +167,7 @@ const AppLayout = ({ toggleTheme, darkMode }) => {
     { text: 'Settings', icon: <SettingsIcon />, path: '/settings' },
     { text: 'My Profile', icon: <AccountCircle />, path: '/profile' },
   ];
-
+  
   const isActiveRoute = (path) => {
     // Check if current location matches the item path
     return location.pathname === path;
@@ -182,11 +182,11 @@ const AppLayout = ({ toggleTheme, darkMode }) => {
   useEffect(() => {
     setDrawerOpen(!isMobile);
   }, [isMobile]);
-
+  
   return (
     <Box sx={{ display: 'flex', width: '100%', overflowX: 'hidden' }}>
-      <AppBar 
-        position="fixed" 
+      <AppBar
+        position="fixed"
         elevation={0}
         sx={{
           width: { md: `calc(100% - ${drawerOpen ? drawerWidth : 64}px)` },
@@ -222,18 +222,18 @@ const AppLayout = ({ toggleTheme, darkMode }) => {
           }}
         >
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
               onClick={handleDrawerToggle}
-              edge="start"
+            edge="start"
               sx={{
                 marginRight: 2,
                 ...(drawerOpen && { display: { xs: 'flex', md: 'none' } }),
               }}
-            >
-              <MenuIcon />
-            </IconButton>
+          >
+            <MenuIcon />
+          </IconButton>
             
             {(!drawerOpen || isMobile) && (
               <motion.div
@@ -244,7 +244,7 @@ const AppLayout = ({ toggleTheme, darkMode }) => {
               >
                 <Typography variant="h6" noWrap component="div">
                   {activeTitle}
-                </Typography>
+          </Typography>
               </motion.div>
             )}
           </Box>
