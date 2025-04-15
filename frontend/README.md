@@ -1,6 +1,81 @@
-# Getting Started with Create React App
+# Family App Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and features an Apple-inspired design system.
+
+## Running the Application
+
+### Development Mode
+
+```bash
+npm install
+npm start
+```
+
+This runs the app in development mode at [http://localhost:3000](http://localhost:3000).
+
+### Production Build
+
+```bash
+npm run build
+```
+
+Builds the app for production to the `build` folder.
+
+## Docker Deployment
+
+This project includes Docker support for easy deployment.
+
+### Using Docker Compose (Recommended)
+
+To run both frontend and backend services:
+
+```bash
+# From the project root
+docker-compose up -d
+```
+
+This will:
+- Build the frontend and backend images
+- Start containers for both services
+- Make the frontend available at http://localhost:3000
+- Make the backend available at http://localhost:5000
+
+### Using Docker Directly
+
+To build and run only the frontend:
+
+```bash
+# Build the image
+docker build -t family-app-frontend .
+
+# Run the container
+docker run -p 3000:80 -d family-app-frontend
+```
+
+## Stable Dependencies
+
+This project uses stable versions of dependencies to ensure compatibility:
+
+- React 18.2.0
+- MUI 5.14.9
+- Framer Motion 10.16.4
+
+## Redesigned UI
+
+The application features an Apple-inspired design with:
+
+- Clean, minimal aesthetics
+- Frosted glass UI elements
+- Apple's SF Pro-inspired typography
+- Apple color palette
+- Subtle animations
+
+## Development Guidelines
+
+- Use the established Apple-inspired design system
+- Follow the existing component structure
+- Ensure responsive design works on all device sizes
+- Test in both light and dark mode
 
 ## Available Scripts
 
