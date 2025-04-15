@@ -1,0 +1,23 @@
+# Use node 18 as the base image
+FROM node:18-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Copy package files first to leverage Docker caching
+COPY ./backend/package.json ./backend/package-lock.json ./
+
+# Install dependencies
+RUN npm ci
+
+# Copy backend files
+COPY ./backend ./
+
+# Create uploads directory
+RUN mkdir -p uploads
+
+# Expose port 5000
+EXPOSE 5000
+
+# Start the backend
+CMD ["npm", "start"] 
