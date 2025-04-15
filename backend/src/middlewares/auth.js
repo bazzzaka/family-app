@@ -27,7 +27,7 @@ const authenticate = async (req, res, next) => {
     
     // Add user to request
     req.user = user;
-    req.userId = user._id;
+    req.user.id = user._id;
     next();
   } catch (error) {
     if (error.name === 'JsonWebTokenError') {

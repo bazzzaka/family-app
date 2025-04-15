@@ -1,0 +1,39 @@
+{
+  "familyGroups": {
+    "title": "Family Groups",
+    "createButton": "Create Family Group",
+    "noGroups": "No family groups yet. Create your first family group to get started!",
+    "createDialog": {
+      "title": "Create New Family Group",
+      "nameLabel": "Family Group Name",
+      "descriptionLabel": "Description (optional)",
+      "cancelButton": "Cancel",
+      "createButton": "Create"
+    },
+    "errors": {
+      "network": "Network error. Please check your connection and try again.",
+      "unauthorized": "Please log in to view family groups.",
+      "createUnauthorized": "Please log in to create a family group.",
+      "createFailed": "Failed to create family group. Please try again."
+    },
+    "success": {
+      "created": "Family group created successfully!"
+    }
+  },
+  "dashboard": {
+    "welcome": "Welcome to Family App",
+    "subtitle": "Your family's digital home",
+    "familyGroups": "Family Groups",
+    "familyGroupsDescription": "Manage your family groups and members",
+    "familyTree": "Family Tree",
+    "familyTreeDescription": "Explore your family history and connections",
+    "chat": "Chat",
+    "chatDescription": "Connect with your family members",
+    "media": "Media",
+    "mediaDescription": "Share and view family photos and videos",
+    "budget": "Budget",
+    "budgetDescription": "Track family expenses and budgets",
+    "recentActivity": "Recent Activity",
+    "noRecentActivity": "No recent activity to show"
+  }
+} 

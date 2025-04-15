@@ -1,36 +1,21 @@
 const mongoose = require('mongoose');
 
 const FamilyMemberSchema = new mongoose.Schema({
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-    default: null
-  },
   name: {
     type: String,
     required: true,
     trim: true
+  },
+  birthDate: {
+    type: Date
   },
   gender: {
     type: String,
     enum: ['male', 'female', 'other'],
     required: true
   },
-  dateOfBirth: {
-    type: Date,
-    default: null
-  },
-  dateOfDeath: {
-    type: Date,
-    default: null
-  },
-  bio: {
-    type: String,
-    default: ''
-  },
   photo: {
-    type: String,
-    default: ''
+    type: String
   },
   parents: [{
     type: mongoose.Schema.Types.ObjectId,
@@ -41,43 +26,32 @@ const FamilyMemberSchema = new mongoose.Schema({
     ref: 'FamilyMember'
   }],
   partners: [{
-    partner: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'FamilyMember'
-    },
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'FamilyMember',
     relationship: {
       type: String,
-      enum: ['married', 'divorced', 'engaged', 'partners', 'other'],
+      enum: ['married', 'divorced', 'engaged', 'partner'],
       default: 'married'
-    },
-    startDate: {
-      type: Date,
-      default: null
-    },
-    endDate: {
-      type: Date,
-      default: null
     }
   }],
-  familyTree: {
+  familyGroup: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'FamilyTree',
+    ref: 'FamilyGroup',
     required: true
   },
-  isUnknown: {
-    type: Boolean,
-    default: false
+  createdBy: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
   },
-  isDistant: {
-    type: Boolean,
-    default: false
+  createdAt: {
+    type: Date,
+    default: Date.now
   },
-  additionalInfo: {
-    type: Object,
-    default: {}
+  updatedAt: {
+    type: Date,
+    default: Date.now
   }
-}, {
-  timestamps: true
 });
 
 module.exports = mongoose.model('FamilyMember', FamilyMemberSchema); 

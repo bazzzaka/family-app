@@ -114,7 +114,8 @@ const AppLayout = ({ toggleTheme, darkMode }) => {
       <List>
         {menuItems.map((item) => (
           <ListItem
-            button
+            component="div"
+            disableRipple
             key={item.text}
             onClick={() => navigateTo(item.path)}
             sx={{
@@ -122,6 +123,7 @@ const AppLayout = ({ toggleTheme, darkMode }) => {
                 location.pathname === item.path
                   ? theme.palette.action.selected
                   : 'transparent',
+              cursor: 'pointer'
             }}
           >
             <ListItemIcon>{item.icon}</ListItemIcon>
@@ -133,7 +135,8 @@ const AppLayout = ({ toggleTheme, darkMode }) => {
       <List>
         {secondaryMenuItems.map((item) => (
           <ListItem
-            button
+            component="div"
+            disableRipple
             key={item.text}
             onClick={() => navigateTo(item.path)}
             sx={{
@@ -141,19 +144,30 @@ const AppLayout = ({ toggleTheme, darkMode }) => {
                 location.pathname === item.path
                   ? theme.palette.action.selected
                   : 'transparent',
+              cursor: 'pointer'
             }}
           >
             <ListItemIcon>{item.icon}</ListItemIcon>
             <ListItemText primary={item.text} />
           </ListItem>
         ))}
-        <ListItem button onClick={toggleTheme}>
+        <ListItem 
+          component="div"
+          disableRipple
+          onClick={toggleTheme}
+          sx={{ cursor: 'pointer' }}
+        >
           <ListItemIcon>
             {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
           </ListItemIcon>
           <ListItemText primary={darkMode ? "Light Mode" : "Dark Mode"} />
         </ListItem>
-        <ListItem button onClick={handleLogout}>
+        <ListItem 
+          component="div"
+          disableRipple
+          onClick={handleLogout}
+          sx={{ cursor: 'pointer' }}
+        >
           <ListItemIcon>
             <LogoutIcon />
           </ListItemIcon>

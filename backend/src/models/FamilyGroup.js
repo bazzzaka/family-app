@@ -52,4 +52,9 @@ const FamilyGroupSchema = new mongoose.Schema({
   timestamps: true
 });
 
+// Index to improve query performance
+FamilyGroupSchema.index({ 'members.user': 1 });
+FamilyGroupSchema.index({ creator: 1 });
+FamilyGroupSchema.index({ name: 'text', description: 'text' });
+
 module.exports = mongoose.model('FamilyGroup', FamilyGroupSchema); 

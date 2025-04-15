@@ -7,11 +7,12 @@ const dotenv = require('dotenv');
 const path = require('path');
 
 // Route imports
-const authRoutes = require('./routes/auth');
-const userRoutes = require('./routes/users');
+const authRoutes = require('./routes/authRoutes');
+const userRoutes = require('./routes/userRoutes');
 const messageRoutes = require('./routes/messages');
 const mediaRoutes = require('./routes/media');
-const familyRoutes = require('./routes/family');
+const familyGroupRoutes = require('./routes/familyGroupRoutes');
+const familyTreeRoutes = require('./routes/familyTreeRoutes');
 const budgetRoutes = require('./routes/budget');
 const chatRoutes = require('./routes/chatRoutes');
 
@@ -30,7 +31,12 @@ const io = socketIo(server, {
 });
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: process.env.CLIENT_URL || 'http://localhost:3000',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
@@ -76,7 +82,8 @@ app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/messages', messageRoutes);
 app.use('/api/media', mediaRoutes);
-app.use('/api/family', familyRoutes);
+app.use('/api/family-groups', familyGroupRoutes);
+app.use('/api/family-tree', familyTreeRoutes);
 app.use('/api/budget', budgetRoutes);
 app.use('/api/chat', chatRoutes);
 

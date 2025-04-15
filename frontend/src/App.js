@@ -29,6 +29,7 @@ import NotFound from './pages/NotFound';
 
 // Context
 import { AuthProvider } from './context/AuthContext';
+import { LanguageProvider } from './context/LanguageContext';
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -80,43 +81,45 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AuthProvider>
-        <Router>
-          <Routes>
-            {/* Auth routes */}
-            <Route element={<AuthLayout />}>
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/forgot-password" element={<ForgotPassword />} />
-            </Route>
-            
-            {/* App routes */}
-            <Route
-              element={
-                <ProtectedRoute>
-                  <AppLayout toggleTheme={toggleTheme} darkMode={darkMode} />
-                </ProtectedRoute>
-              }
-            >
-              <Route path="/" element={<Dashboard />} />
-              <Route path="/messages" element={<Messages />} />
-              <Route path="/messages/:roomId" element={<Chat />} />
-              <Route path="/albums" element={<PhotoAlbums />} />
-              <Route path="/albums/:albumId" element={<AlbumDetail />} />
-              <Route path="/family" element={<FamilyGroups />} />
-              <Route path="/family/:groupId" element={<FamilyGroupDetail />} />
-              <Route path="/family/:groupId/tree" element={<FamilyTree />} />
-              <Route path="/budgets" element={<Budget />} />
-              <Route path="/budgets/:budgetId" element={<BudgetDetail />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/settings" element={<Settings />} />
-            </Route>
-            
-            {/* 404 route */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Router>
-      </AuthProvider>
+      <LanguageProvider>
+        <AuthProvider>
+          <Router>
+            <Routes>
+              {/* Auth routes */}
+              <Route element={<AuthLayout />}>
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/forgot-password" element={<ForgotPassword />} />
+              </Route>
+              
+              {/* App routes */}
+              <Route
+                element={
+                  <ProtectedRoute>
+                    <AppLayout toggleTheme={toggleTheme} darkMode={darkMode} />
+                  </ProtectedRoute>
+                }
+              >
+                <Route path="/" element={<Dashboard />} />
+                <Route path="/messages" element={<Messages />} />
+                <Route path="/messages/:roomId" element={<Chat />} />
+                <Route path="/albums" element={<PhotoAlbums />} />
+                <Route path="/albums/:albumId" element={<AlbumDetail />} />
+                <Route path="/family" element={<FamilyGroups />} />
+                <Route path="/family/:groupId" element={<FamilyGroupDetail />} />
+                <Route path="/family-tree/:familyGroupId" element={<FamilyTree />} />
+                <Route path="/budgets" element={<Budget />} />
+                <Route path="/budgets/:budgetId" element={<BudgetDetail />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/settings" element={<Settings />} />
+              </Route>
+              
+              {/* 404 route */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Router>
+        </AuthProvider>
+      </LanguageProvider>
     </ThemeProvider>
   );
 };

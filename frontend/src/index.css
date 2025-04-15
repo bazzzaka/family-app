@@ -11,3 +11,56 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Tree node styles */
+.node__root circle {
+  fill: #fff;
+  stroke: #1976d2;
+  stroke-width: 3;
+}
+
+.node__branch circle {
+  fill: #fff;
+  stroke: #1976d2;
+  stroke-width: 2;
+}
+
+.node__leaf circle {
+  fill: #fff;
+  stroke: #4caf50;
+  stroke-width: 2;
+}
+
+/* Path styles */
+.rd3t-link {
+  stroke: #bdbdbd;
+  stroke-width: 2;
+}
+
+/* Path hover effect */
+.rd3t-link:hover {
+  stroke: #1976d2;
+  stroke-width: 3;
+}
+
+/* Node hover effect */
+.rd3t-node:hover circle {
+  r: 20;
+  transition: r 0.3s ease-in-out;
+}
+
+/* Additional transition effect for smoother tree interactions */
+.rd3t-node, .rd3t-link {
+  transition: all 0.3s ease-in-out;
+}
+
+/* For foreignObject content if needed later */
+.rd3t-label__title {
+  font-weight: bold;
+  fill: #212121;
+}
+
+.rd3t-label__attributes {
+  fill: #757575;
+  font-size: 0.8em;
+}
