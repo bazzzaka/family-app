@@ -1318,7 +1318,7 @@ const Profile = () => {
                         }}
                       >
                         Family Networks
-                      </Typography>
+        </Typography>
                     </Box>
                     <Button
                       variant="text"
