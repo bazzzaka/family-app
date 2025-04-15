@@ -5,6 +5,89 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Глобальні стилі для виправлення проблеми з відступами */
+.MuiContainer-root, 
+.MuiContainer-maxWidthXl, 
+.MuiBox-root,
+.MuiGrid-container,
+.MuiGrid-item,
+.MuiGrid-root,
+.css-p43sob, 
+.css-14e3o55, 
+.css-1at9qkq,
+.css-1bohzk3,
+.css-hhdjsd-MuiContainer-root {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+/* Інтеграція Toolbar і Box */
+.MuiToolbar-root,
+.MuiToolbar-root.MuiToolbar-gutters,
+.MuiToolbar-root.MuiToolbar-regular,
+.MuiToolbar-root.css-1otej0g-MuiToolbar-root {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+.MuiToolbar-root.css-1ygil4i-MuiToolbar-root,
+.MuiBox-root.css-1bohzk3 {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  border-left: none !important;
+}
+
+/* Покращена інтеграція App Layout */
+.MuiAppBar-root {
+  backdrop-filter: blur(15px);
+  transition: all 0.3s ease;
+}
+
+/* Fix for motion components */
+.MuiBox-root[data-motion-element="true"],
+.MuiPaper-root[data-motion-element="true"],
+.MuiCard-root[data-motion-element="true"],
+.MuiTypography-root[data-motion-element="true"] {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  border-left: none !important;
+}
+
+/* Виключення для Tab content і подібних елементів де потрібен нормальний padding */
+.MuiCardContent-root,
+.MuiPaper-root .MuiBox-root {
+  padding: inherit !important;
+}
+
+/* Виправляємо табуляцію для контенту внутрішніх елементів */
+.MuiTabs-root {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+.MuiTab-root {
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+
+.MuiContainer-root {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.MuiDrawer-paper {
+  left: 0 !important;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 code {
@@ -63,4 +146,51 @@ code {
 .rd3t-label__attributes {
   fill: #757575;
   font-size: 0.8em;
+}
+
+/* Global reset for left padding/margin issues */
+.MuiBox-root, 
+.css-p43sob, 
+.css-14e3o55, 
+.css-1at9qkq, 
+.MuiContainer-root,
+.MuiContainer-maxWidthXl,
+.css-hhdjsd-MuiContainer-root,
+.MuiGrid-root,
+.MuiGrid-container,
+.MuiGrid-item {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+.MuiContainer-root {
+  max-width: 100% !important;
+}
+
+.MuiDrawer-paper {
+  position: relative !important;
+}
+
+/* Ensure content properly aligns when drawer is open */
+.MuiBox-root.css-p43sob > div {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Стилі для покращення відображення вмісту при переключенні меню */
+@media (max-width: 899px) {
+  .MuiToolbar-root .MuiBox-root {
+    display: flex;
+    align-items: center;
+    padding-left: 0 !important;
+  }
+  
+  .MuiToolbar-root.css-1otej0g-MuiToolbar-root {
+    padding: 0 16px !important;
+    margin-left: 0 !important;
+  }
 }
