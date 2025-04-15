@@ -53,14 +53,97 @@ const App = () => {
     palette: {
       mode: darkMode ? 'dark' : 'light',
       primary: {
-        main: '#1976d2',
+        main: '#0A84FF', // Apple blue
       },
       secondary: {
-        main: '#f50057',
+        main: '#FF375F', // Apple pink
       },
+      background: {
+        default: darkMode ? '#1c1c1e' : '#f5f5f7',
+        paper: darkMode ? '#2c2c2e' : '#ffffff',
+      },
+      text: {
+        primary: darkMode ? '#ffffff' : '#1d1d1f',
+        secondary: darkMode ? 'rgba(255, 255, 255, 0.7)' : '#86868b',
+      },
+      divider: darkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)',
     },
     typography: {
-      fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+      fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+      h1: {
+        fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+        fontWeight: 700,
+        letterSpacing: '-0.015em',
+      },
+      h2: {
+        fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+        fontWeight: 700,
+        letterSpacing: '-0.01em',
+      },
+      h3: {
+        fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+        fontWeight: 600,
+        letterSpacing: '-0.005em',
+      },
+      h4: {
+        fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+        fontWeight: 600,
+      },
+      h5: {
+        fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+        fontWeight: 600,
+      },
+      h6: {
+        fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+        fontWeight: 500,
+      },
+      button: {
+        textTransform: 'none',
+        fontWeight: 500,
+      },
+    },
+    shape: {
+      borderRadius: 12,
+    },
+    shadows: [
+      'none',
+      '0px 2px 4px rgba(0, 0, 0, 0.05)',
+      '0px 4px 8px rgba(0, 0, 0, 0.06)',
+      '0px 8px 16px rgba(0, 0, 0, 0.07)',
+      '0px 12px 24px rgba(0, 0, 0, 0.08)',
+      // ...keep other shadows from default theme
+    ],
+    components: {
+      MuiButton: {
+        styleOverrides: {
+          root: {
+            borderRadius: '12px',
+            padding: '8px 16px',
+            transition: 'all 0.2s ease',
+          },
+          contained: {
+            boxShadow: 'none',
+            '&:hover': {
+              boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
+            },
+          },
+        },
+      },
+      MuiCard: {
+        styleOverrides: {
+          root: {
+            borderRadius: '16px',
+            boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.08)',
+          },
+        },
+      },
+      MuiPaper: {
+        styleOverrides: {
+          rounded: {
+            borderRadius: '16px',
+          },
+        },
+      },
     },
   });
   
