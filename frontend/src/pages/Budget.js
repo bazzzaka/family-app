@@ -512,8 +512,8 @@ const Budget = () => {
                           }}
                         >
                           {formatCurrency(category.amount)}
-                        </Typography>
-                      </Paper>
+        </Typography>
+      </Paper>
                     </MotionDiv>
                   </Grid>
                 ))}
